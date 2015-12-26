@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -ex
 
@@ -26,7 +26,7 @@ then
     git pull -r origin master
     popd
 else
-    git clone https://github.com/hibooboo2/scripts.git ${MYSCRPITS}
+    git clone --recursive https://github.com/hibooboo2/scripts.git ${MYSCRPITS}
 fi
 
 if [ ! -f "~/.bashrc" ]

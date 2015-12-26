@@ -1,4 +1,5 @@
 git config --global alias.cm 'commit -am'
+git config --global push.default matching
 git config --global alias.pf 'push -f --no-verify --all'
 git config --global alias.cma 'commit -a --amend'
 git config --global alias.fa 'fetch --all'
@@ -14,6 +15,8 @@ git config --global alias.tags 'tag -l'
 git config --global alias.remotes 'remote -v'
 git config --global alias.branches 'branch -avv'
 git config --global branch.autosetupmerge false
-[[ ! -z "${USER_EMAIL}" ]] && git config --global user.email '${USER_EMAIL}'
+git config --global alias.update '![[ ! -z "$(which updateGitBranches)" ]] && updateGitBranches'
+git config --global color.ui auto
+[[ ! -z "${EMAIL}" ]] && git config --global user.email '${EMAIL}'
 [[ ! -z "${USER_NAME}" ]] && git config --global user.name '${USER_NAME}'
 exit 0
